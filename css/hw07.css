@@ -1,0 +1,325 @@
+ /* 元素選擇器：讓寬度包含 padding 與 border，避免超出畫面。 */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 設定整頁字型、字級、行高、文字色與背景色。 */
+        body {
+            margin: 0;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            font-size: 16px;
+            line-height: 1.85;
+            color: #59453f;
+            background-color: #fff9ef;
+        }
+
+        /* 頁首使用粉紅與奶油黃漸層，搭配粉色底框線。 */
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f6d8e1, #fff0c4);
+            border-bottom: 5px solid #dfabba;
+        }
+
+        h1 {
+            margin: 0 0 16px;
+            font-size: 36px;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #694f49;
+        }
+
+        h2 {
+            color: #885565;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        h3 {
+            color: #806331;
+            font-size: 20px;
+        }
+
+        p {
+            margin: 14px 0;
+        }
+
+        /* 導覽可自動換行，讓手機也能完整顯示所有連結。 */
+        nav {
+            padding: 16px;
+            background-color: #fffdf6;
+            border-bottom: 1px solid #ead5cb;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav a {
+            display: block;
+            padding: 7px 14px;
+            background-color: #f9e7ec;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        a {
+            color: #96546c;
+            text-underline-offset: 4px;
+            overflow-wrap: anywhere;
+        }
+
+        /* 滑鼠移入時改變連結顏色。 */
+        a:hover {
+            color: #754052;
+            text-decoration: underline;
+        }
+
+        nav a:hover {
+            background-color: #f0cfda;
+        }
+
+        /* 鍵盤使用者按 Tab 時，可以清楚看見目前焦點。 */
+        a:focus-visible {
+            outline: 3px solid #b35e7b;
+            outline-offset: 4px;
+        }
+
+        /* max-width 限制正文寬度；左右 auto 外距讓內容置中。 */
+        main {
+            max-width: 980px;
+            margin: 32px auto;
+            padding: 0 20px;
+        }
+
+        article > h2 {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        /*
+         * 盒子模型：
+         * margin 是區塊外距；padding 是內容內距；border 是框線。
+         */
+        section {
+            margin-bottom: 24px;
+            padding: 28px;
+            background-color: #fffdf8;
+            border: 1px solid #e4cfc0;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(119, 77, 65, 0.06);
+            scroll-margin-top: 20px;
+        }
+
+        section h2 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #efd2dc;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* class 選擇器：統一回到頁首連結的排列與外觀。 */
+        .back-top {
+            margin-top: 24px;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .back-top a {
+            display: inline-block;
+            padding: 5px 13px;
+            background-color: #f9e9ee;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        .back-top a:hover {
+            background-color: #f0cfda;
+        }
+
+        /* class 選擇器：表格過寬時，在容器內橫向捲動。 */
+        .table-wrap {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        /* 使用 CSS 框線取代 HTML 的 border="1"。 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        caption {
+            padding: 10px 0;
+            color: #805761;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #d9bfb1;
+            text-align: left;
+        }
+
+        th {
+            color: #65483f;
+            background-color: #fff0c9;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fff2f5;
+        }
+
+        /* 圖片最大寬度不超過容器，height: auto 保持原始比例。 */
+        figure {
+            margin: 20px 0;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            color: #7a6960;
+            font-size: 14px;
+        }
+
+        /* 影片與地圖共用的寬度、框線及圓角設定。 */
+        .media-frame {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            border: 0;
+            border-radius: 12px;
+        }
+
+        .map-frame {
+            height: 360px;
+        }
+
+        /* 影片容器維持 16:9，iframe 填滿容器。 */
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ID 選擇器：對應 aside 的 id="travel-tips"。 */
+        #travel-tips {
+            margin: 24px 0;
+            padding: 24px;
+            background-color: #fff0cd;
+            border-left: 5px solid #d58aa4;
+            border-radius: 12px;
+        }
+
+        #travel-tips h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            padding: 28px 20px;
+            text-align: center;
+            background-color: #f3ded4;
+        }
+
+        footer hr {
+            max-width: 500px;
+            border: 0;
+            border-top: 1px solid #d5afa7;
+        }
+
+        /* 手機版縮小標題、留白與地圖高度。 */
+        @media (max-width: 600px) {
+            header {
+                padding: 42px 16px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+
+            section {
+                padding: 20px 16px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+
+            .map-frame {
+                height: 280px;
+            }
+        }
+
+        /* 使用者偏好減少動畫時，停用平滑捲動。 */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+        /* 保留原作品標籤的外觀 */
+p.work-label {
+    display: inline-block;
+    padding: 6px 18px;
+    border: 1px solid #bd8295;
+    border-radius: 20px;
+    color: #67484f;
+}
+/* 保留閱讀焦點的粉色背景、左框線及內距 */
+p.reading-focus {
+    background-color: #fdf0f3;
+    color: #67484f;
+    border-left: 4px solid #d58aa4;
+    padding: 12px 16px;
+}
+/* 保留提醒標記的粉色底色與圓角 */
+mark.tip-highlight {
+    background-color: #f7dce5;
+    color: #7a3651;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+/* 保留資料聲明的文字色與字級 */
+small.report-disclaimer {
+    color: #78685f;
+    font-size: 13px;
+}
